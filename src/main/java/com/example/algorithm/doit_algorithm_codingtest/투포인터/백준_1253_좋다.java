@@ -8,11 +8,7 @@ public class 백준_1253_좋다 {
             BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
             int N = Integer.valueOf(br.readLine()); //입력받는 수의 개수
-            long[] arr = new long[N]; //수를 저장할 배열
-
-            //배열에 입력값 저장
-            StringTokenizer st = new StringTokenizer(br.readLine());
-            for(int i = 0; i < N; i++) arr[i] = Long.valueOf(st.nextToken());
+            long[] arr = Arrays.stream(br.readLine().split(" ")).mapToLong(Long::parseLong).toArray(); //수를 저장할 배열 -> 스트림이용
 
             Arrays.sort(arr); //배열 정렬
             int count = 0;
